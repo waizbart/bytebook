@@ -1,0 +1,54 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.body{
+
+}
+
+.labelTitulo{
+  font-size: 15px;
+  overflow: hidden;
+
+}
+
+.labelAutor{
+  font-size: 12px;
+  overflow: hidden;
+
+}
+
+.labelNota{
+  font-size: 12px;
+  overflow: hidden;
+
+}
+
+.imagem{
+  height: 45vh;
+  width: 100%;
+}
+
+.divImagem{
+  text-align: center;
+  border: 1px solid black;
+}
+
+.labels{
+  display: flex;
+  flex-direction: column;
+}
+
+.card{
+  padding: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 10%;
+  border-radius: 20px;
+  border: 1px solid black;
+  height: 100%;
+  box-sizing: border-box;
+  background-color: white;
+}
