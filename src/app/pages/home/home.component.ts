@@ -4,6 +4,7 @@ import { BookService } from '../../services/book.service';
 import { Book } from '../../services/book.interface';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { SliderComponent } from '../../components/slider/slider.component';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +12,8 @@ import { CommonModule } from '@angular/common';
   imports: [
     FormsModule,
     HttpClientModule,
-    CommonModule
+    CommonModule,
+    SliderComponent
   ],
   providers: [
     HttpClientModule

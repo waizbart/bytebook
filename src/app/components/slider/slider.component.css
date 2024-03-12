@@ -4,30 +4,15 @@
   box-sizing: border-box;
 }
 
-body{
-  padding: 0 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  background: #343F4F;
-  width: 100%;
-}
-.wrapper{
-  max-width: 1200px;
-}
-.wrapper .carousel{
-  white-space: nowrap;
-  cursor: pointer;
-  font-size: 0px;
+.wrapper .carousel {
   overflow: hidden;
 }
 
-.carousel{
+.carousel {
   display: flex;
 }
 
-.card{
+.card {
   padding: 10px 20px ;
   height: 340px;
   object-fit: cover;
@@ -41,6 +26,7 @@ body{
     width: calc(100%/2);
   }
 }
+
 @media screen and (max-width: 550px){
   .carousel img{
     width: calc(100%);

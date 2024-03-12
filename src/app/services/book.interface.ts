@@ -8,7 +8,7 @@ export interface VolumeInfo {
   publisher: string
   publishedDate: string
   pageCount: number
-  imageLinks: ImageLinks
+  imageLinks?: ImageLinks
   previewLink: string
 }
 

@@ -4,10 +4,6 @@
   box-sizing: border-box;
 }
 
-.body{
-
-}
-
 .labelTitulo{
   font-size: 15px;
   overflow: hidden;
@@ -27,7 +23,7 @@
 }
 
 .imagem{
-  height: 45vh;
+  height: 25vh;
   width: 100%;
 }
 

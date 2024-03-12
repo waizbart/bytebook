@@ -18,15 +18,22 @@
     <div *ngIf="books.length > 0">
       <ul>
         <li *ngFor="let book of books">
-          <img [src]="book.volumeInfo?.imageLinks?.thumbnail" alt="book.title" width="100" height="100">
+          <img [src]="book.volumeInfo.imageLinks?.thumbnail ?? '/assets/images/logo.png'" alt="book.title" width="100" height="100">
           <p>{{book.volumeInfo.title}}</p>
           <p>
             {{book.volumeInfo.authors}}
           </p>
-          <a [href]="book.volumeInfo.previewLink" target="_blank">Ver mais</a>
+          <iframe
+            src="{{book.volumeInfo.previewLink}}"
+            >
+          </iframe>
         </li>
       </ul>
     </div>
+
+    <app-slider>
+
+    </app-slider>
   </div>
 </body>
 
