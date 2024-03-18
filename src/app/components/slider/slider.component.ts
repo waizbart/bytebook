@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Input } from '@angular/core';
 import { Card } from '../card/card';
 import { CardComponent } from '../card/card.component';
 import { CommonModule } from '@angular/common';
@@ -23,57 +23,7 @@ export class SliderComponent implements OnInit {
 
   constructor() { }
 
-  listaCards: Array<Card> = [
-    {
-      img: '/assets/images/logo.png',
-      titulo: 'Livro 1',
-      autor: 'Geroge',
-      nota: '4.3/10'
-    },
-    {
-      img: '/assets/images/logo.png',
-      titulo: 'Livro 2',
-      autor: 'Ave',
-      nota: '4.2/10'
-    },
-    {
-      img: '/assets/images/logo.png',
-      titulo: 'Livro 3',
-      autor: 'Geronimo',
-      nota: '4.1/10'
-    },
-    {
-      img: '/assets/images/logo.png',
-      titulo: 'Livro 4',
-      autor: 'Baboza',
-      nota: '4.9/10'
-    },
-    {
-      img: '/assets/images/logo.png',
-      titulo: 'Livro 5',
-      autor: 'Jao',
-      nota: '4.8/10'
-    },
-    {
-      img: '/assets/images/logo.png',
-      titulo: 'Livro 6',
-      autor: 'Renato',
-      nota: '4.4/10'
-    },
-    {
-      img: '/assets/images/logo.png',
-      titulo: 'Livro 7',
-      autor: 'Geroge orwell',
-      nota: '4.6/10'
-    },
-    {
-      img: '/assets/images/logo.png',
-      titulo: 'Livro 8',
-      autor: 'Ronaldinho',
-      nota: '4.7/10'
-    }
-
-  ];
+  @Input() cards: Array<any> = [];
 
   dragStart = (e: MouseEvent) => {
     const carousel = this.carouselElement!.nativeElement;
@@ -82,7 +32,6 @@ export class SliderComponent implements OnInit {
       this.prevPageX = e.pageX;
       this.prevScrollleft = carousel.scrollLeft;
     }
-
   }
 
   touchStart = (e: TouchEvent) => {

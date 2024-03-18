@@ -5,7 +5,7 @@ import { Book } from '../../services/book.interface';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { SliderComponent } from '../../components/slider/slider.component';
-
+import { cutString } from '../../helpers/string';
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -29,14 +29,31 @@ export class HomeComponent implements OnInit {
   constructor(private bookService: BookService) { }
 
   ngOnInit() {
-    this.bookService.getBooks().subscribe((data: any) => {
-      this.books = data.items
-    });
+    this.getBooks();
   }
 
   onSearch() {
-    this.bookService.getBooks(this.search).subscribe((data: any) => {
-      this.books = data.items
+    this.getBooks(this.search);
+  }
+
+  getBooks(search?: string) {
+    this.bookService.getBooks(search, 8).subscribe((data: any) => {
+      this.books = data.items.map((item: any) => {
+        return {
+          title: cutString(item.volumeInfo.title, 15),
+          authors: item.volumeInfo.authors,
+          pageCount: item.volumeInfo.pageCount,
+          publisher: item.volumeInfo.publisher,
+          publishedDate: item.volumeInfo.publishedDate,
+          previewLink: item.volumeInfo.previewLink,
+          imageLinks: item.volumeInfo.imageLinks ?? {
+            thumbnail: '/assets/images/home/no-image.webp',
+          }
+        };
+      })
+      .filter((book: Book) => book.authors !== undefined);
     });
+
+    console.log(this.books);
   }
 }

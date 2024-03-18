@@ -1,18 +1,12 @@
 export interface Book {
-  volumeInfo: VolumeInfo
-}
-
-export interface VolumeInfo {
-  title: string
-  authors: string[]
-  publisher: string
-  publishedDate: string
-  pageCount: number
-  imageLinks?: ImageLinks
-  previewLink: string
-}
-
-export interface ImageLinks {
-  smallThumbnail: string
-  thumbnail: string
+  title: string;
+  authors: string[];
+  pageCount: number;
+  publisher: string;
+  publishedDate: string;
+  previewLink: string;
+  imageLinks: {
+    smallThumbnail: string;
+    thumbnail: string;
+  };
 }

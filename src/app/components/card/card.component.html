@@ -1,15 +1,12 @@
 <html>
   <body class="body">
     <div class="card">
-      <div class="divImagem">
-        <img id="imgBook" class="imagem" src={{card.img}} alt="">
-      </div>
-      <div class="labels">
-        <label for="imgBook" class="labelTitulo">{{card.titulo}}</label>
-        <label for="imgBook" class="labelAutor">{{card.autor}}</label>
-        <label for="imgBook" class="labelNota">{{card.nota}}</label>
+      <img class="card-image" [src]="card.imageLinks.thumbnail" alt="book" />
+
+      <div class="card-content">
+        <h2 class="card-title">{{ card.title }}</h2>
+        <p class="card-author">{{ card.authors[0] }}</p>
       </div>
     </div>
-
   </body>
 </html>
