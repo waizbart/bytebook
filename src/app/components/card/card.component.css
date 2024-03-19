@@ -31,9 +31,16 @@
   border: 1px solid black;
 }
 
-.labels{
-  display: flex;
-  flex-direction: column;
+.card-title{
+  font-size: 14px;
+  overflow: hidden;
+  font-weight: 500;
+}
+
+.card-author {
+  font-size: 12px;
+  overflow: hidden;
+  font-weight: 300;
 }
 
 .card{
