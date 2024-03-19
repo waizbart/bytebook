@@ -8,12 +8,14 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { CardComponent } from './components/card/card.component';
 import { SliderComponent } from './components/slider/slider.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CardComponent,
-    SliderComponent
+    SliderComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,

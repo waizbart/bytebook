@@ -1,0 +1,14 @@
+#sidebar{
+  height: 90vh;
+  width: 15.5%;
+  display: flex;
+  background-color: red;
+  padding: 10px;
+
+  #icon{
+    flex-basis: 100%;
+    height: 20%;
+    background-color: blue;
+
+  }
+}
