@@ -1,6 +1,12 @@
 export interface Card{
-  img:string
-  titulo:string
-  autor:string
-  nota:string
+  title: string;
+  authors: string[];
+  pageCount: number;
+  publisher: string;
+  publishedDate: string;
+  previewLink: string;
+  imageLinks: {
+    smallThumbnail: string;
+    thumbnail: string;
+  }
 }

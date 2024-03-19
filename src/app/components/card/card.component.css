@@ -4,10 +4,6 @@
   box-sizing: border-box;
 }
 
-.body{
-
-}
-
 .labelTitulo{
   font-size: 15px;
   overflow: hidden;
@@ -27,8 +23,7 @@
 }
 
 .imagem{
-  height: 45vh;
-  width: 100%;
+  height: auto;
 }
 
 .divImagem{
@@ -51,4 +46,9 @@
   height: 100%;
   box-sizing: border-box;
   background-color: white;
+  transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.05); /* Add a hover effect */
 }

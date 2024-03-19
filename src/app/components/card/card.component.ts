@@ -2,22 +2,27 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Card } from './card';
 
 @Component({
+  standalone: true,
   selector: 'app-card',
   templateUrl: './card.component.html',
-  styleUrl: './card.component.css'
+  styleUrl: './card.component.css',
+  imports: [],
 })
-export class CardComponent implements OnInit{
-
+export class CardComponent implements OnInit {
   @Input() card: Card = {
-    img: '',
-    titulo: '',
-    autor: '',
-    nota: ''
-  }
+    title: '',
+    authors: [],
+    pageCount: 0,
+    publisher: '',
+    publishedDate: '',
+    previewLink: '',
+    imageLinks: {
+      smallThumbnail: '',
+      thumbnail: '',
+    },
+  };
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
