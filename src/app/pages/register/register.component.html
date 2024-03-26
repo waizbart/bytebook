@@ -15,8 +15,7 @@
             <form action="" class="form__login">
                 <div class="div__login-header">
                     <img class="logo__login" src="/assets/images/logo.png" alt="logo">
-                    <h4>Bem vindo !</h4>
-                    <p>Sign in to continue to yourDigital Library</p>
+                    <h4>Registre-se</h4>
                 </div>
 
                 <div class="div__form">
@@ -25,29 +24,27 @@
                         <input type="email" class="form-control" id="exampleFormControlInput1"
                             placeholder="name@example.com">
                     </div>
-                    <label for="inputPassword5" class="form-label">Password</label>
-                    <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock">
-                    <img src="/src/assets/images/login/View_hide_fill.png" alt="">
-                </div>
 
-                <div class="remember__forgot">
-                    <div class="form-check">
-                        <input class="form-check-input checkbox_remember" type="checkbox" value="#"
-                            id="flexCheckDefault">
-                        <label class="form-check-label" for="flexCheckDefault">
-                            Lembrar-me
-                        </label>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Confirm Email</label>
+                        <input type="email" class="form-control" id="exampleFormControlInput1"/>
                     </div>
 
-                    <a href="#">Esqueceu a senha?</a>
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" id="password" class="form-control password"
+                        aria-describedby="passwordHelpBlock">
+
+                    <label for="confirmPassword" class="form-label">Confirm Password</label>
+                    <input type="password" id="confirmPassword" class="form-control confirmPassword"
+                        aria-describedby="passwordHelpBlock">
                 </div>
 
                 <div class="d-grid gap-2 div__button-login">
-                    <button class="btn btn-primary button_login" type="submit">Login</button>
+                    <button class="btn btn-primary button_login" type="submit">Registrar-se</button>
                 </div>
 
                 <div>
-                    <p class="p__new-user">Novo Usuário? <a href="/register">Registre-se aqui!</a></p>
+                    <p class="p__new-user">Já tem conta? <a href="/login">login aqui!</a></p>
                 </div>
             </form>
         </div>
