@@ -2,22 +2,28 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  color: #4D4D4D;
+}
+
+body {
+  width: 93%;
 }
 
 .labelTitulo{
-  font-size: 15px;
+  font-size: 12px;
   overflow: hidden;
 
 }
 
 .labelAutor{
-  font-size: 12px;
+  font-size: 10px;
   overflow: hidden;
 
 }
 
 .labelNota{
-  font-size: 12px;
+  font-size: 10px;
   overflow: hidden;
 
 }
@@ -28,17 +34,16 @@
 
 .divImagem{
   text-align: center;
-  border: 1px solid black;
 }
 
 .card-title{
-  font-size: 14px;
+  font-size: 13px;
   overflow: hidden;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .card-author {
-  font-size: 12px;
+  font-size: 10px;
   overflow: hidden;
   font-weight: 300;
 }
@@ -48,14 +53,25 @@
   display: flex;
   flex-direction: column;
   padding: 10%;
+  height: 42vh;
   border-radius: 20px;
-  border: 1px solid black;
-  height: 100%;
   box-sizing: border-box;
   background-color: white;
   transition: transform 0.2s ease-in-out;
+  gap: 0.7em;
 }
 
 .card:hover {
-  transform: scale(1.05); /* Add a hover effect */
+  transform: scale(1.02); /* Add a hover effect */
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4em;
+}
+
+.card-image{
+  height: 28vh;
+  border-radius: 8px;
 }
