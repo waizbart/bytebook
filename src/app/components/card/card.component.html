@@ -1,12 +1,18 @@
 <html>
-  <body class="body">
-    <div class="card">
-      <img class="card-image" [src]="card.imageLinks.thumbnail" alt="book" />
 
-      <div class="card-content">
-        <h2 class="card-title">{{ card.title }}</h2>
-        <p class="card-author">{{ card.authors[0] }}</p>
-      </div>
+<body class="body">
+  <a class="card" [routerLink]="['/book-details']" [queryParams]="{
+      previewLink: card.previewLink,
+      title: card.title,
+      authors: card.authors,
+    }">
+    <img class="card-image" [src]="card.imageLinks.thumbnail" alt="book" />
+
+    <div class="card-content">
+      <h2 class="card-title">{{ card.title }}</h2>
+      <p class="card-author">{{ card.authors[0] }}</p>
     </div>
-  </body>
+  </a>
+</body>
+
 </html>

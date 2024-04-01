@@ -1,12 +1,15 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Card } from './card';
+import { RouterModule } from '@angular/router';
 
 @Component({
   standalone: true,
   selector: 'app-card',
   templateUrl: './card.component.html',
   styleUrl: './card.component.css',
-  imports: [],
+  imports: [
+    RouterModule
+  ],
 })
 export class CardComponent implements OnInit {
   @Input() card: Card = {
@@ -21,6 +24,8 @@ export class CardComponent implements OnInit {
       thumbnail: '',
     },
   };
+
+  @Input() onClick: Function = () => { };
 
   constructor() {}
 

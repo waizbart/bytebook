@@ -6,6 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { SliderComponent } from '../../components/slider/slider.component';
 import { cutString } from '../../helpers/string';
+import { Router, RouterModule } from '@angular/router';
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -13,7 +14,8 @@ import { cutString } from '../../helpers/string';
     FormsModule,
     HttpClientModule,
     CommonModule,
-    SliderComponent
+    SliderComponent,
+    RouterModule
   ],
   providers: [
     HttpClientModule
@@ -26,7 +28,7 @@ export class HomeComponent implements OnInit {
   title = 'Home';
   books: Book[] = [];
 
-  constructor(private bookService: BookService) { }
+  constructor(private bookService: BookService, private router: Router) { }
 
   ngOnInit() {
     this.getBooks();
@@ -51,9 +53,7 @@ export class HomeComponent implements OnInit {
           }
         };
       })
-      .filter((book: Book) => book.authors !== undefined);
+        .filter((book: Book) => book.authors !== undefined);
     });
-
-    console.log(this.books);
   }
 }

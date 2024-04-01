@@ -24,6 +24,7 @@ export class SliderComponent implements OnInit {
   constructor() { }
 
   @Input() cards: Array<any> = [];
+  @Input() onClick: Function = () => { };
 
   dragStart = (e: MouseEvent) => {
     const carousel = this.carouselElement!.nativeElement;
@@ -88,6 +89,4 @@ export class SliderComponent implements OnInit {
     }
 
   }
-
-
 }
