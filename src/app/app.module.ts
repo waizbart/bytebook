@@ -9,7 +9,6 @@ import { FormsModule } from '@angular/forms';
 import { SidebarComponent } from './layout/sidebar/sidebar.component';
 import { RegisterComponent } from './pages/register/register.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,

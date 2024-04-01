@@ -1,5 +1,10 @@
 <div class="wrapper">
-  <div class="carousel" #carousel>
+  <div *ngIf="!isLoading" class="carousel" #carousel>
     <app-card class="card" *ngFor="let card of cards" [card]="card"></app-card>
+  </div>
+  <div *ngIf="isLoading" class="loading">
+    <div class="text-center text-primary">
+      <div class="spinner-border" role="status"></div>
+    </div>
   </div>
 </div>

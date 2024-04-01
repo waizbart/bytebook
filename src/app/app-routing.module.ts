@@ -8,7 +8,8 @@ export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
   { path: 'home', component: HomeComponent },
   { path: 'login', component: TelaLoginComponent },
-  { path: 'register', component: RegisterComponent}
+  { path: 'register', component: RegisterComponent},
+  { path: '**', redirectTo: 'home' }
 ];
 
 @NgModule({

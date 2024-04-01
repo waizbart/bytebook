@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef, Input } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Input, SimpleChanges } from '@angular/core';
 import { Card } from '../card/card';
 import { CardComponent } from '../card/card.component';
 import { CommonModule } from '@angular/common';
@@ -24,6 +24,7 @@ export class SliderComponent implements OnInit {
   constructor() { }
 
   @Input() cards: Array<any> = [];
+  @Input() isLoading: boolean = true;
 
   dragStart = (e: MouseEvent) => {
     const carousel = this.carouselElement!.nativeElement;
@@ -86,8 +87,5 @@ export class SliderComponent implements OnInit {
     } else {
       console.error('Carousel element not found.')
     }
-
   }
-
-
 }
