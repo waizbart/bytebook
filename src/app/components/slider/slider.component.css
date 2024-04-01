@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background-color: #eaeaea;
 }
 
 .wrapper .carousel {
@@ -13,40 +14,39 @@
 }
 
 .card {
-  padding: 10px 20px;
+  padding: 10px 10px;
   object-fit: cover;
-  width: calc(100%/5);
-  flex: 0 0 auto; /* Maintain width */
-  margin-right: 10px; /* Optional spacing */
+  width: calc(100%/7.5);
+  flex: 0 0 auto;
 }
 
 @media screen and (max-width: 900px){
   .carousel img{
-    width: calc(100%/3);
+    width: calc(100%/6);
   }
 
   .card {
-    width: calc(100%/3);
+    width: calc(100%/6);
   }
 }
 
 @media screen and (max-width: 750px){
   .carousel img{
-    width: calc(100%/2);
+    width: calc(100%/4);
   }
 
   .card {
-    width: calc(100%/2);
+    width: calc(100%/4);
   }
 
 }
 
 @media screen and (max-width: 550px){
   .carousel img{
-    width: calc(100%);
+    width: calc(100%/2);
   }
 
   .card {
-    width: calc(100%);
+    width: calc(100%/2);
   }
 }
