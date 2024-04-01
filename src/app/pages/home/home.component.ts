@@ -6,6 +6,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { SliderComponent } from '../../components/slider/slider.component';
 import { cutString } from '../../helpers/string';
+import { QuoteComponent } from '../../components/quote/quote.component';
+
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -13,7 +15,8 @@ import { cutString } from '../../helpers/string';
     FormsModule,
     HttpClientModule,
     CommonModule,
-    SliderComponent
+    SliderComponent,
+    QuoteComponent
   ],
   providers: [
     HttpClientModule
