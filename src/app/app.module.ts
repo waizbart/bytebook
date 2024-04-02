@@ -8,12 +8,14 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { SidebarComponent } from './layout/sidebar/sidebar.component';
 import { RegisterComponent } from './pages/register/register.component';
+import { BookDetailsComponent } from './pages/book-details/book-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegisterComponent,
-    SidebarComponent
+    SidebarComponent,
+    BookDetailsComponent
   ],
   imports: [
     BrowserModule,
