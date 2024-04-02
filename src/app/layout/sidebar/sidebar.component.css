@@ -20,7 +20,7 @@
   display: flex;
 
   #searchBar{
-    background-color: red;
+    background-color: white;
     height: 60px;
     width: calc(100%/2);
     display: flex;
@@ -36,6 +36,7 @@
       flex-direction: row;
       border: 1px solid black;
       align-items: center;
+      position: relative;
 
       #rectangleDetailSearch{
         width: 20%;
@@ -43,20 +44,35 @@
         border-top-left-radius: 25px;
         border-bottom-left-radius: 25px;
         background-color: #f7f7fa;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position:relative;
+
+        img{
+          position: absolute;
+        }
+
       }
       input{
         border: none;
         height: 80%;
         width: 70%;
         border-right: 1px solid lightgray;
+        outline: none;
 
+      }
+      
+      img{
+        position: absolute;
+        right:  11%;
       }
 
     }
   }
 
   #time{
-    background-color: yellow;
+    background-color: white;
     height: 60px;
     width: calc(100%/3);
     display: flex;
@@ -72,11 +88,22 @@
       flex-direction: row;
       border: 1px solid black;
       align-items: center;
+      position:relative;
+
+      #clock{
+        position:absolute;
+        left:15%;
+      }
+
+      #calendar{
+        position:absolute;
+        right:40%;
+      }
     }
   }
 
   #user{
-    background-color: green;
+    background-color: white;
     height: 60px;
     width: calc(100%/6);
     display: flex;
@@ -92,6 +119,16 @@
       flex-direction: row;
       border: 1px solid black;
       align-items: center;
+      position:relative;
+
+      img{
+        position:absolute;
+        height: 90%;
+        aspect-ratio: 1;
+        border: 1px solid black;
+        border-radius: 25px;
+        left: 2px;
+      }
     }
   }
 }
