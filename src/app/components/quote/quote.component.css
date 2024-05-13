@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+    padding: 0;
+    color: white;
+  }
+
+div {
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2em;
+    background: linear-gradient(to bottom right, #c9472aee, #5b24d1);
+    width: 23%;
+    border: 1px solid black;
+    border-radius: 9px;
+}
+
+p, h2 {
+    font-family: "Inter", sans-serif;
+}
+
+.autor {
+    text-align: right;
+}
