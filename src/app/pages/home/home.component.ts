@@ -7,6 +7,8 @@ import { CommonModule } from '@angular/common';
 import { SliderComponent } from '../../components/slider/slider.component';
 import { cutString } from '../../helpers/string';
 import { QuoteComponent } from '../../components/quote/quote.component';
+import { HeaderComponent } from '../../components/header/header.component';
+
 
 @Component({
   selector: 'app-home',
@@ -16,7 +18,8 @@ import { QuoteComponent } from '../../components/quote/quote.component';
     HttpClientModule,
     CommonModule,
     SliderComponent,
-    QuoteComponent
+    QuoteComponent,
+    HeaderComponent
   ],
   providers: [
     HttpClientModule
@@ -41,7 +44,7 @@ export class HomeComponent implements OnInit {
   }
 
   getBooks(search?: string) {
-    this.isLoading = true;
+    // this.isLoading = true; 
 
     this.bookService.getBooks(search, 8).subscribe((data: any) => {
       this.books = data.items.map((item: any) => {
