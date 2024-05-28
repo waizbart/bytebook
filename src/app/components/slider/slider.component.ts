@@ -1,91 +1,72 @@
-import { Component, OnInit, ViewChild, ElementRef, Input, SimpleChanges } from '@angular/core';
-import { Card } from '../card/card';
-import { CardComponent } from '../card/card.component';
+import { Component, OnInit, ViewChild, ElementRef, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { CardComponent } from '../card/card.component';
 
 @Component({
   standalone: true,
-  imports: [
-    CardComponent,
-    CommonModule
-  ],
   selector: 'app-slider',
   templateUrl: './slider.component.html',
-  styleUrls: ['./slider.component.css']
+  styleUrls: ['./slider.component.css'],
+  imports: [CommonModule, CardComponent]
 })
-
 export class SliderComponent implements OnInit {
   @ViewChild('carousel', { static: true }) carouselElement: ElementRef<HTMLElement> | null = null;
   isDragStart: boolean = false;
   prevPageX: number = 0;
-  prevScrollleft: number = 0;
+  prevScrollLeft: number = 0;
   positionDiff: number = 0;
-
-  constructor() { }
 
   @Input() cards: Array<any> = [];
   @Input() isLoading: boolean = true;
 
-  dragStart = (e: MouseEvent) => {
-    const carousel = this.carouselElement!.nativeElement;
-    if (carousel) {
-      this.isDragStart = true;
-      this.prevPageX = e.pageX;
-      this.prevScrollleft = carousel.scrollLeft;
-    }
-  }
-
-  touchStart = (e: TouchEvent) => {
-    const carousel = this.carouselElement!.nativeElement;
-    if (carousel) {
-      this.isDragStart = true;
-      this.prevPageX = e.touches[0].pageX;
-      this.prevScrollleft = carousel.scrollLeft;
-    }
-
-  }
-
-  dragStop = () => {
-    this.isDragStart = false;
-  }
-
-  dragging = (e: MouseEvent) => {
-    const carousel = this.carouselElement!.nativeElement;
-    if (carousel) {
-      if (!this.isDragStart) return;
-      e.preventDefault();
-      this.positionDiff = e.pageX - this.prevPageX;
-      carousel.scrollLeft = this.prevScrollleft - this.positionDiff;
-    } else {
-      console.error('Carousel element not found dragStart.')
-    }
-
-  }
-
-  touchdragging = (e: TouchEvent) => {
-    const carousel = this.carouselElement!.nativeElement;
-    if (carousel) {
-      if (!this.isDragStart) return;
-      e.preventDefault();
-      this.positionDiff = e.touches[0].pageX - this.prevPageX;
-      carousel.scrollLeft = this.prevScrollleft - this.positionDiff;
-    } else {
-      console.error('Carousel element not found dragStart.')
-    }
-
-  }
+  constructor() { }
 
   ngOnInit(): void {
     if (this.carouselElement) {
-      this.carouselElement.nativeElement.addEventListener('mousedown', this.dragStart);
-      this.carouselElement.nativeElement.addEventListener('mousemove', this.dragging);
-      this.carouselElement.nativeElement.addEventListener('mouseup', this.dragStop);
+      const carousel = this.carouselElement.nativeElement;
 
-      this.carouselElement.nativeElement.addEventListener('touchstart', this.touchStart);
-      this.carouselElement.nativeElement.addEventListener('touchmove', this.touchdragging);
-      this.carouselElement.nativeElement.addEventListener('touchend', this.dragStop);
+      // Event listeners for dragging
+      carousel.addEventListener('mousedown', this.dragStart.bind(this));
+      carousel.addEventListener('mousemove', this.dragging.bind(this));
+      carousel.addEventListener('mouseup', this.dragStop.bind(this));
+      carousel.addEventListener('mouseleave', this.dragStop.bind(this));
+
+      // Event listeners for touch events
+      carousel.addEventListener('touchstart', this.touchStart.bind(this));
+      carousel.addEventListener('touchmove', this.touchDragging.bind(this));
+      carousel.addEventListener('touchend', this.dragStop.bind(this));
     } else {
-      console.error('Carousel element not found.')
+      console.error('Carousel element not found.');
     }
+  }
+
+  dragStart(e: MouseEvent): void {
+    this.isDragStart = true;
+    this.prevPageX = e.pageX;
+    this.prevScrollLeft = this.carouselElement!.nativeElement.scrollLeft;
+  }
+
+  touchStart(e: TouchEvent): void {
+    this.isDragStart = true;
+    this.prevPageX = e.touches[0].pageX;
+    this.prevScrollLeft = this.carouselElement!.nativeElement.scrollLeft;
+  }
+
+  dragStop(): void {
+    this.isDragStart = false;
+  }
+
+  dragging(e: MouseEvent): void {
+    if (!this.isDragStart) return;
+    e.preventDefault();
+    const positionDiff = e.pageX - this.prevPageX;
+    this.carouselElement!.nativeElement.scrollLeft = this.prevScrollLeft - positionDiff;
+  }
+
+  touchDragging(e: TouchEvent): void {
+    if (!this.isDragStart) return;
+    e.preventDefault();
+    const positionDiff = e.touches[0].pageX - this.prevPageX;
+    this.carouselElement!.nativeElement.scrollLeft = this.prevScrollLeft - positionDiff;
   }
 }

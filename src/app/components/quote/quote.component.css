@@ -1,8 +1,8 @@
-*{
+* {
     margin: 0;
     padding: 0;
     color: white;
-  }
+}
 
 div {
     padding: 2em;
@@ -10,12 +10,14 @@ div {
     flex-direction: column;
     gap: 1.2em;
     background: linear-gradient(to bottom right, #c9472aee, #5b24d1);
-    width: 23%;
+    width: 60%;
     border: 1px solid black;
     border-radius: 9px;
+    margin-bottom: 1em;
 }
 
-p, h2 {
+p,
+h2 {
     font-family: "Inter", sans-serif;
 }
 

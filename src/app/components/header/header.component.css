@@ -1,0 +1,62 @@
+.header {
+    display: flex;
+    align-items: center;
+}
+
+.header_date,
+.header_select,
+.header_perfil {
+    display: flex;
+    flex-direction: row;
+    gap: 3em;
+    margin-left: 2em;
+    background-color: white;
+    border: 0.5px solid #cfcfcf;
+    border-radius: 20px;
+    padding: 0.7em 5em;
+}
+
+.header_select {
+    padding: 0.7em 1em;
+    gap: 1em;
+}
+
+.header_perfil {
+    padding: 0.7em 1em;
+}
+
+.header_date-filho {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5em;
+}
+
+.header_date-image {
+    width: 20px;
+    height: 20px;
+}
+
+.language-select {
+    border: none;
+    background: none;
+    font-size: 1em;
+    color: #4D4D4D;
+    cursor: pointer;
+}
+
+h6 {
+    margin-bottom: 0;
+}
+
+.header_perfil {
+    gap: 0.7em;
+    align-items: center;
+    padding: 0.5em 2em 0.5em 0.8em;
+}
+
+.foto__perfil {
+    width: 32px;
+    height: 27px;
+    border-radius: 50%;
+    margin: 0;
+}

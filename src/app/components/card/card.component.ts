@@ -32,7 +32,7 @@ export class CardComponent implements OnInit {
       queryParams: {
         previewLink: this.card.previewLink,
         title: this.card.title,
-        authors: this.card.authors.join(', ') // Convertendo a array de autores para string
+        authors: this.card.authors.join(', ')
       }
     });
   }
