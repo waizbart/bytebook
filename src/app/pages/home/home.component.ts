@@ -19,7 +19,7 @@ import { HeaderComponent } from '../../components/header/header.component';
     CommonModule,
     SliderComponent,
     QuoteComponent,
-    HeaderComponent
+    HeaderComponent,
   ],
   providers: [
     HttpClientModule
@@ -44,7 +44,7 @@ export class HomeComponent implements OnInit {
   }
 
   getBooks(search?: string) {
-    // this.isLoading = true; 
+    // this.isLoading = true;
 
     this.bookService.getBooks(search, 8).subscribe((data: any) => {
       this.books = data.items.map((item: any) => {
