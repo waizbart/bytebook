@@ -11,7 +11,7 @@ body {
   border-radius: 10px;
 }
 
-.labelTitulo{
+.labelTitulo{ 
   font-size: 12px;
   overflow: hidden;
 
@@ -50,7 +50,6 @@ body {
 }
 
 .card{
-  z-index: -1px;
   padding: auto;
   display: flex;
   flex-direction: column;
