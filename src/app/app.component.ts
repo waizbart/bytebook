@@ -1,25 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
+import { HeaderComponent } from './components/header/header.component';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
 })
 export class AppComponent implements OnInit {
   title = 'bytebook_v2';
 
   showSidebar: boolean = false;
 
-  publicRoutes = [
-    'login',
-    'register'
-  ]
+  publicRoutes = ['login', 'register'];
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) {}
 
   ngOnInit(): void {
-    this.router.events.subscribe(event => {
+    this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         this.showSidebar = !this.publicRoutes.includes(event.url.split('/')[1]);
       }

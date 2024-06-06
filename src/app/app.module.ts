@@ -11,20 +11,15 @@ import { RegisterComponent } from './pages/register/register.component';
 import { BookDetailsComponent } from './pages/book-details/book-details.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    RegisterComponent,
-    SidebarComponent,
-    BookDetailsComponent
-  ],
+  declarations: [AppComponent, RegisterComponent, SidebarComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     CommonModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

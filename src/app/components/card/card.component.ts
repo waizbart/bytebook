@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Card } from './card';
 import { Router } from '@angular/router';
+import { BehaviorSubject, Observable, of } from 'rxjs';
 
 @Component({
   standalone: true,
@@ -23,7 +24,7 @@ export class CardComponent implements OnInit {
     },
   };
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) {}
 
   ngOnInit(): void {}
 
@@ -32,8 +33,9 @@ export class CardComponent implements OnInit {
       queryParams: {
         previewLink: this.card.previewLink,
         title: this.card.title,
-        authors: this.card.authors.join(', ')
-      }
+        authors: this.card.authors.join(', '),
+        thumb: this.card.imageLinks.thumbnail,
+      },
     });
   }
 }
