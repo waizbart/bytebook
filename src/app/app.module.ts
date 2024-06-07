@@ -9,17 +9,25 @@ import { FormsModule } from '@angular/forms';
 import { SidebarComponent } from './layout/sidebar/sidebar.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { BookDetailsComponent } from './pages/book-details/book-details.component';
+import { CardNewArrivalsComponent } from './components/card-new-arrivals/card-new-arrivals.component';
 
 @NgModule({
-  declarations: [AppComponent, RegisterComponent, SidebarComponent],
+  declarations: [
+    AppComponent,
+    RegisterComponent,
+    SidebarComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     CommonModule,
     FormsModule,
+    CardNewArrivalsComponent,
+    BookDetailsComponent,
+
   ],
   providers: [],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

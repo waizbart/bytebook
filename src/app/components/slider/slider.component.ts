@@ -1,13 +1,14 @@
 import { Component, OnInit, ViewChild, ElementRef, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CardComponent } from '../card/card.component';
+import { CardNewArrivalsComponent } from '../card-new-arrivals/card-new-arrivals.component';
 
 @Component({
   standalone: true,
   selector: 'app-slider',
   templateUrl: './slider.component.html',
   styleUrls: ['./slider.component.css'],
-  imports: [CommonModule, CardComponent]
+  imports: [CommonModule, CardComponent, CardNewArrivalsComponent]
 })
 export class SliderComponent implements OnInit {
   @ViewChild('carousel', { static: true }) carouselElement: ElementRef<HTMLElement> | null = null;

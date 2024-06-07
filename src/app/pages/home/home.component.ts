@@ -9,6 +9,7 @@ import { cutString } from '../../helpers/string';
 import { QuoteComponent } from '../../components/quote/quote.component';
 import { HeaderComponent } from '../../components/header/header.component';
 
+
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -20,9 +21,11 @@ import { HeaderComponent } from '../../components/header/header.component';
     QuoteComponent,
     HeaderComponent,
   ],
-  providers: [HttpClientModule],
+  providers: [
+    HttpClientModule
+  ],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css',
+  styleUrl: './home.component.css'
 })
 export class HomeComponent implements OnInit {
   search: string = '';
@@ -30,7 +33,7 @@ export class HomeComponent implements OnInit {
   books: Book[] = [];
   isLoading: boolean = false;
 
-  constructor(private bookService: BookService) {}
+  constructor(private bookService: BookService) { }
 
   ngOnInit() {
     this.getBooks();
@@ -44,21 +47,20 @@ export class HomeComponent implements OnInit {
     // this.isLoading = true;
 
     this.bookService.getBooks(search, 8).subscribe((data: any) => {
-      this.books = data.items
-        .map((item: any) => {
-          return {
-            title: cutString(item.volumeInfo.title, 15),
-            authors: item.volumeInfo.authors,
-            pageCount: item.volumeInfo.pageCount,
-            publisher: item.volumeInfo.publisher,
-            publishedDate: item.volumeInfo.publishedDate,
-            previewLink: item.volumeInfo.previewLink,
-            imageLinks: item.volumeInfo.imageLinks ?? {
-              thumbnail: '/assets/images/home/no-image.webp',
-            },
-          };
-        })
-        .filter((book: Book) => book.authors !== undefined);
+      this.books = data.items.map((item: any) => {
+        return {
+          title: cutString(item.volumeInfo.title, 15),
+          authors: item.volumeInfo.authors,
+          pageCount: item.volumeInfo.pageCount,
+          publisher: item.volumeInfo.publisher,
+          publishedDate: item.volumeInfo.publishedDate,
+          previewLink: item.volumeInfo.previewLink,
+          imageLinks: item.volumeInfo.imageLinks ?? {
+            thumbnail: '/assets/images/home/no-image.webp',
+          }
+        };
+      })
+      .filter((book: Book) => book.authors !== undefined);
 
       this.isLoading = false;
     });

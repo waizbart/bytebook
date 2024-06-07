@@ -11,7 +11,7 @@ describe('QuoteComponent', () => {
       declarations: [QuoteComponent]
     })
     .compileComponents();
-    
+
     fixture = TestBed.createComponent(QuoteComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
@@ -21,3 +21,4 @@ describe('QuoteComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+//

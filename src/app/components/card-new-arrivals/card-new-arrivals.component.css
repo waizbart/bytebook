@@ -1,0 +1,46 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  color: #4D4D4D;
+}
+
+body {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.imagem{
+  height: auto;
+}
+
+
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  height: auto;
+  width: 100%;
+  border-radius: 10px;
+  box-sizing: border-box;
+  background-color: white;
+  transition: transform 0.2s ease-in-out;
+  gap: 0.7em;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for better look */
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4em;
+}
+
+.card-image{
+  min-height: 25vh;
+  border-radius: 8px;
+}
