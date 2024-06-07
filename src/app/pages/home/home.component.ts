@@ -46,6 +46,7 @@ export class HomeComponent implements OnInit {
     this.bookService.getBooks(search, 8).subscribe((data: any) => {
       this.books = data.items
         .map((item: any) => {
+          console.log({ item });
           return {
             title: cutString(item.volumeInfo.title, 15),
             authors: item.volumeInfo.authors,
@@ -56,6 +57,10 @@ export class HomeComponent implements OnInit {
             imageLinks: item.volumeInfo.imageLinks ?? {
               thumbnail: '/assets/images/home/no-image.webp',
             },
+            description: item.volumeInfo.description,
+            mainCategory: item.volumeInfo.mainCategory,
+            averageRating: item.volumeInfo.averageRating,
+            language: item.volumeInfo.language,
           };
         })
         .filter((book: Book) => book.authors !== undefined);

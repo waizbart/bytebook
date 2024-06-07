@@ -1,4 +1,4 @@
-export interface Card{
+export interface Card {
   title: string;
   authors: string[];
   pageCount: number;
@@ -8,5 +8,9 @@ export interface Card{
   imageLinks: {
     smallThumbnail: string;
     thumbnail: string;
-  }
+  };
+  description: string;
+  mainCategory: string;
+  averageRating: number;
+  language: string;
 }

@@ -8,5 +8,10 @@ export interface Book {
   imageLinks: {
     smallThumbnail: string;
     thumbnail: string;
+    extraLarge: string;
   };
+  description: string;
+  mainCategory: string;
+  averageRating: number;
+  language: string;
 }

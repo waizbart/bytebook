@@ -1,3 +1,4 @@
+import { BookService } from './../../services/book/book.service';
 import { Component, Input, OnInit } from '@angular/core';
 import { Card } from './card';
 import { Router } from '@angular/router';
@@ -22,20 +23,19 @@ export class CardComponent implements OnInit {
       smallThumbnail: '',
       thumbnail: '',
     },
+    description: '',
+    language: '',
+    mainCategory: '',
+    averageRating: 0,
   };
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private BookService: BookService) {}
 
   ngOnInit(): void {}
 
   navigateToDetails(): void {
-    this.router.navigate(['/book-details'], {
-      queryParams: {
-        previewLink: this.card.previewLink,
-        title: this.card.title,
-        authors: this.card.authors.join(', '),
-        thumb: this.card.imageLinks.thumbnail,
-      },
-    });
+    this.BookService.setSelectedBookinfo(this.card);
+
+    this.router.navigate(['/book-details']);
   }
 }
