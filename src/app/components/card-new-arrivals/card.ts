@@ -8,3 +8,4 @@ export interface CardNewArrivals{
     thumbnail: string;
   }
 }
+//

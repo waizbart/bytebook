@@ -19,7 +19,7 @@ export class CardNewArrivalsComponent implements OnInit {
       thumbnail: '',
     },
   };
-
+//
   constructor(private router: Router) { }
 
   ngOnInit(): void {}

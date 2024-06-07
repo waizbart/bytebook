@@ -10,7 +10,7 @@
       <span>Lançamentos</span>
     </div>
     <div class="wrapper">
-      <div *ngIf="!isLoading" class="carousel" #carousel>
+      <div *ngIf="!isLoading" class="carrousel" #carousel>
         <app-card-new-arrivals class="card" *ngFor="let card of cards" [card]="card"></app-card-new-arrivals>
       </div>
       <div *ngIf="isLoading" class="loading">

@@ -11,7 +11,7 @@ describe('CardNewArrivalsComponent', () => {
       declarations: [CardNewArrivalsComponent]
     })
     .compileComponents();
-    
+    //
     fixture = TestBed.createComponent(CardNewArrivalsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

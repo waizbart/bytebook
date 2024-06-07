@@ -18,7 +18,7 @@ export class QuoteComponent implements OnInit {
 
   @Input() cards: Array<any> = [];
   @Input() isLoading: boolean = true;
-  isSearching: boolean = false; // Add a flag to track search state
+  isSearching: boolean = false; // Add a flag to track search stat
 
   constructor() { }
 

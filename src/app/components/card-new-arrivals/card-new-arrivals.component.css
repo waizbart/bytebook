@@ -11,24 +11,6 @@ body {
   border-radius: 10px;
 }
 
-.labelTitulo{
-  font-size: 12px;
-  overflow: hidden;
-
-}
-
-.labelAutor{
-  font-size: 10px;
-  overflow: hidden;
-
-}
-
-.labelNota{
-  font-size: 10px;
-  overflow: hidden;
-
-}
-
 .imagem{
   height: auto;
 }
@@ -40,7 +22,6 @@ body {
   padding: 10px;
   height: auto;
   width: 100%;
-  margin-left: 10px;
   border-radius: 10px;
   box-sizing: border-box;
   background-color: white;

@@ -26,7 +26,7 @@
 .rectangle {
   display: flex;
   justify-content: center;
-  width: 90%;
+  width: 95%;
   border: 2px solid #5b24d1;
   border-radius: 8px;
   padding: 15px;
@@ -36,18 +36,21 @@
 .new-arrivals-label {
   position: absolute;
   top: 50%; /* Posicione acima dos cards */
-  left: 0px;
   text-align: center;
-  width: 40%; /* Ajuste conforme necessário */
+  width: 34%; /* Ajuste conforme necessário */
   background: linear-gradient(90deg, #EB5231, #571FCF); /* Linear gradient */
   color: white;
   padding: 5px 10px;
   border-radius: 5px;
   font-weight: bold;
+  left: -10px;
   transform: rotate(-90deg) translateX(-50%);
   transform-origin: left top 0;
 }
 
+span {
+  transform: translateX(95%);
+}
 
 .wrapper {
   width: 100%;
@@ -55,7 +58,7 @@
   overflow: hidden;
 }
 
-.carousel {
+.carrousel {
   display: flex;
   gap: 1em;
   overflow: hidden;
