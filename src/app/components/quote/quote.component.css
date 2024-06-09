@@ -2,68 +2,82 @@
   margin: 0;
   padding: 0;
   color: white;
-  box-sizing: border-box; /* Crucial for proper calculations with padding/borders */
-  display: flex;
+  box-sizing: border-box;
 }
-.box{
+
+.container {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
-  height: 100%;
+  align-items: flex-start;
+  gap: 2em;
 }
+
 .quote {
   padding: 2em;
   display: flex;
   flex-direction: column;
   gap: 1.2em;
   background: linear-gradient(to bottom right, #c9472aee, #5b24d1);
-  width: 100%; /* Take full width on smaller screens */
-  max-width: 500px; /* Limit width on larger screens */
+  max-width: 500px;
   border: 1px solid black;
   border-radius: 9px;
-  margin: 1em auto; /* Center the quote horizontally */
+  flex: 1;
+  margin: 1em;
 }
-.rectangle {
+
+.box {
   display: flex;
   justify-content: center;
-  width: 95%;
+  align-items: center;
+  height: 100%;
+  flex: 2;
+  min-width: 300px;
+}
+
+.rectangle {
+  display: flex;
+  width: 100%;
   border: 2px solid #5b24d1;
   border-radius: 8px;
   padding: 15px;
   position: relative;
+  overflow: hidden; /* Ensure content doesn't overflow */
 }
 
 .new-arrivals-label {
-  position: absolute;
-  top: 50%; /* Posicione acima dos cards */
-  text-align: center;
-  width: 34%; /* Ajuste conforme necessário */
-  background: linear-gradient(90deg, #EB5231, #571FCF); /* Linear gradient */
+  display: flex;
+  align-items: center; /* Center align vertically */
+  justify-content: center;
+  width: 60px; /* Adjust width as needed */
+  background: linear-gradient(90deg, #EB5231, #571FCF);
   color: white;
-  padding: 5px 10px;
-  border-radius: 5px;
   font-weight: bold;
-  left: -10px;
-  transform: rotate(-90deg) translateX(-50%);
-  transform-origin: left top 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
 }
 
-span {
-  transform: translateX(95%);
+.rotated-text {
+  writing-mode: vertical-rl; /* Vertical text */
+  text-orientation: mixed;
+  transform: rotate(180deg); /* Rotate the text to start from bottom to top */
 }
 
 .wrapper {
-  width: 100%;
+  width: calc(100% - 60px); /* Adjust based on label width */
   height: 100%;
   overflow: hidden;
+  margin-left: 60px; /* Add left margin to avoid overlap with the label */
 }
 
 .carrousel {
   display: flex;
   gap: 1em;
-  overflow: hidden;
   overflow-x: hidden;
   scroll-snap-type: x mandatory;
+  padding-bottom: 1em;
 }
 
 .card {
@@ -102,8 +116,4 @@ h2 {
   .card {
     min-width: 60px;
   }
-}
-
-.autor {
-    text-align: right;
 }
