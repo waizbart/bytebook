@@ -10,6 +10,8 @@ import { SidebarComponent } from './layout/sidebar/sidebar.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { BookDetailsComponent } from './pages/book-details/book-details.component';
 import { CardNewArrivalsComponent } from './components/card-new-arrivals/card-new-arrivals.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { CardNewArrivalsComponent } from './components/card-new-arrivals/card-ne
     FormsModule,
     CardNewArrivalsComponent,
     BookDetailsComponent,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
