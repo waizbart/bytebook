@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SidebarComponent } from './layout/sidebar/sidebar.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { BookDetailsComponent } from './pages/book-details/book-details.component';
@@ -25,7 +25,7 @@ import { CardNewArrivalsComponent } from './components/card-new-arrivals/card-ne
     FormsModule,
     CardNewArrivalsComponent,
     BookDetailsComponent,
-
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
