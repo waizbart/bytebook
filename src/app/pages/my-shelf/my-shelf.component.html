@@ -1,0 +1,8 @@
+<div *ngFor="let book of books" class="book">
+  <div class="info">
+    <h2>{{ book.google_book.volumeInfo.title }}</h2>
+    <p>{{ book.google_book.volumeInfo.authors }}</p>
+    <p>Tag: {{ book.tag }}</p>
+    <button (click)="removeBook(book.id)">Remove</button>
+  </div>
+</div>

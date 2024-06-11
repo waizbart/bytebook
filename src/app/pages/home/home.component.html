@@ -12,12 +12,10 @@
         </svg>
       </button>
 
-      <app-header/>
-
+      <app-header />
     </div>
-
     <div class="quote__and__newsRack">
-      <app-quote />
+      <app-quote [cards]="books" [isLoading]="isLoading" />
     </div>
 
     <app-slider [cards]="books" [isLoading]="isLoading" />

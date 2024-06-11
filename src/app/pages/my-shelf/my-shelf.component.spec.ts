@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { QuoteComponent } from './quote.component';
+import { MyShelfComponent } from './my-shelf.component';
 
-describe('QuoteComponent', () => {
-  let component: QuoteComponent;
-  let fixture: ComponentFixture<QuoteComponent>;
+describe('MyShelfComponent', () => {
+  let component: MyShelfComponent;
+  let fixture: ComponentFixture<MyShelfComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [QuoteComponent]
+      declarations: [MyShelfComponent]
     })
     .compileComponents();
-
-    fixture = TestBed.createComponent(QuoteComponent);
+    
+    fixture = TestBed.createComponent(MyShelfComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -21,4 +21,3 @@ describe('QuoteComponent', () => {
     expect(component).toBeTruthy();
   });
 });
-//

@@ -12,7 +12,7 @@
 <body>
     <div class="div__login-background">
         <div class="div__login">
-            <form action="" class="form__login">
+            <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
                 <div class="div__login-header">
                     <img class="logo__login" src="/assets/images/logo.png" alt="logo">
                     <h4>Registre-se</h4>
@@ -20,8 +20,14 @@
 
                 <div class="div__form">
                     <div class="mb-3">
+                      <label for="exampleFormControlInput1" class="form-label">Name</label>
+                      <input type="text" formControlName="name" class="form-control" id="exampleFormControlInput1"
+                          placeholder="John Doe">
+                    </div>
+
+                    <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Email address</label>
-                        <input type="email" class="form-control" id="exampleFormControlInput1"
+                        <input type="email" formControlName="email" class="form-control" id="exampleFormControlInput1"
                             placeholder="name@example.com">
                     </div>
 
@@ -31,7 +37,7 @@
                     </div>
 
                     <label for="password" class="form-label">Password</label>
-                    <input type="password" id="password" class="form-control password"
+                    <input type="password" formControlName="password" id="password" class="form-control password"
                         aria-describedby="passwordHelpBlock">
 
                     <label for="confirmPassword" class="form-label">Confirm Password</label>
