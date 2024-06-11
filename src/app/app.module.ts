@@ -12,12 +12,14 @@ import { BookDetailsComponent } from './pages/book-details/book-details.componen
 import { CardNewArrivalsComponent } from './components/card-new-arrivals/card-new-arrivals.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { MyShelfComponent } from './pages/my-shelf/my-shelf.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegisterComponent,
     SidebarComponent,
+    MyShelfComponent,
   ],
   imports: [
     BrowserModule,

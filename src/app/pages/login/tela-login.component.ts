@@ -27,6 +27,10 @@ export class TelaLoginComponent {
       this.authService.login(this.loginForm.value).subscribe(
         response => {
           console.log('Login bem-sucedido:', response);
+
+          localStorage.setItem('token', response.token);
+          localStorage.setItem('userId', response.user.id);
+
           window.location.href = '/home';
         },
         error => {
