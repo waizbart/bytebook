@@ -25,7 +25,7 @@ export class MyShelfComponent {
   removeBook(id: string) {
     this.bookService.removeBook(id).subscribe(() => {
       this.toastr.success('Livro removido com sucesso!');
-      this.getMyBooks();
+      this.books = this.books.filter(book => book.id !== id); 
     }, error => {
       console.error('Erro ao remover livro:', error);
       this.toastr.error('Erro ao remover livro!');
