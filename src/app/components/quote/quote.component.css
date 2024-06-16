@@ -7,8 +7,10 @@
 
 .container {
   display: flex;
-  gap: 1em;
-  padding: 0;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2em;
 }
 
 .quote {
@@ -110,22 +112,19 @@ p {
   width: 100%;
 }
 
-
+p,
+h2 {
+  font-family: "Inter", sans-serif;
+}
 
 @media (max-width: 768px) {
   .quote {
     padding: 1.5em;
-  }
-  .card {
-    min-width: 80px;
   }
 }
 
 @media (max-width: 480px) {
   .quote {
     padding: 1em;
-  }
-  .card {
-    min-width: 60px;
   }
 }

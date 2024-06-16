@@ -13,6 +13,7 @@ import { CardNewArrivalsComponent } from './components/card-new-arrivals/card-ne
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { MyShelfComponent } from './pages/my-shelf/my-shelf.component';
+import { NewArrivalsComponent } from './components/new-arrivals/new-arrivals.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { MyShelfComponent } from './pages/my-shelf/my-shelf.component';
     HttpClientModule,
     CommonModule,
     FormsModule,
+    NewArrivalsComponent,
     CardNewArrivalsComponent,
     BookDetailsComponent,
     ReactiveFormsModule,

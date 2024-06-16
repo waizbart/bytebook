@@ -1,22 +1,5 @@
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Inter", sans-serif;
-  color: #4D4D4D;
-}
-
-body {
-  width: 100%;
-  border-radius: 10px;
-}
-
-.imagem{
-  height: auto;
-}
-
-
-.card {
+/* card-new-arrivals.component.css */
+.card-new-arrivals {
   display: flex;
   flex-direction: column;
   padding: 10px;
@@ -30,17 +13,11 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for better look */
 }
 
-.card:hover {
+.card-new-arrivals:hover {
   transform: scale(1.02);
 }
 
-.card-content {
-  display: flex;
-  flex-direction: column;
-  gap: 0.4em;
-}
-
-.card-image{
-  min-height: 25vh;
+.card-new-arrivals-image {
+  height: 130px; /* Ajuste a altura conforme necessário */
   border-radius: 8px;
 }

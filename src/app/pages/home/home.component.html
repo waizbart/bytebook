@@ -16,8 +16,12 @@
       <app-header />
     </div>
     <div class="quote__and__newsRack">
-      <app-quote [cards]="books" [isLoading]="isLoading" />
+      <app-quote></app-quote>
+      <div class="app-new-arrivals-wrapper">
+        <app-new-arrivals [cards]="highlightedBooks" [isLoading]="isLoading"></app-new-arrivals>
+      </div>
     </div>
+
 
     <app-slider [cards]="books" [isLoading]="isLoading" />
   </div>

@@ -21,6 +21,7 @@
     "jsonwebtoken": "^9.0.2",
     "ngx-toastr": "^19.0.0",
     "rxjs": "~7.8.0",
+    "toastr": "^2.1.4",
     "zone.js": "~0.14.3"
   },
   "devDependencies": {

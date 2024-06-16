@@ -1,0 +1,91 @@
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  flex: 2;
+  min-width: 300px;
+}
+
+.rectangle {
+  display: flex;
+  width: 80%;
+  border: 2px solid #5b24d1;
+  border-radius: 8px;
+  padding: 10px;
+  position: relative;
+  overflow: hidden;
+  height: 200px;
+}
+
+.new-arrivals-label {
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  width: 50px; /* Ajuste a largura conforme necessário */
+  background: linear-gradient(90deg, #EB5231, #571FCF);
+  color: white;
+  font-weight: bold;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.rotated-text {
+  writing-mode: vertical-rl; /* Vertical text */
+  text-orientation: mixed;
+  transform: rotate(180deg); /* Rotate the text to start from bottom to top */
+}
+
+.wrapper {
+  width: calc(100% - 50px); /* Ajuste a largura conforme necessário */
+  height: 100%;
+  overflow: hidden;
+  margin-left: 50px; /* Adicione margem à esquerda para evitar sobreposição com o rótulo */
+}
+
+.carrousel {
+  display: flex;
+  gap: 0.5em; /* Ajuste o espaçamento entre os itens conforme necessário */
+  overflow-x: hidden;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 1em;
+  height: 100%; /* Certifique-se de que o carrossel ocupe toda a altura do wrapper */
+}
+
+.card {
+  scroll-snap-align: start;
+  border-radius: 10px;
+  min-width: 80px; /* Ajuste a largura mínima conforme necessário */
+  max-width: 80px; /* Ajuste a largura máxima conforme necessário */
+  flex: 0 0 auto;
+  height: 150px; /* Ajuste a altura das cartas conforme necessário */
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%; /* Certifique-se de que o loading ocupe toda a altura do wrapper */
+}
+
+p,
+h2 {
+  font-family: "Inter", sans-serif;
+}
+
+@media (max-width: 768px) {
+  .card {
+    min-width: 70px; /* Ajuste a largura mínima para dispositivos menores */
+    height: 130px; /* Ajuste a altura conforme necessário */
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    min-width: 60px; /* Ajuste a largura mínima para dispositivos muito pequenos */
+    height: 110px; /* Ajuste a altura conforme necessário */
+  }
+}
