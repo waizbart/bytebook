@@ -7,23 +7,38 @@
 
 .container {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 2em;
+  gap: 1em;
+  padding: 0;
 }
 
 .quote {
-  padding: 2em;
+  padding: 1em;
   display: flex;
   flex-direction: column;
   gap: 1.2em;
   background: linear-gradient(to bottom right, #c9472aee, #5b24d1);
-  max-width: 500px;
+  max-width: 65%;
   border: 1px solid black;
   border-radius: 9px;
   flex: 1;
-  margin: 1em;
+  margin: 1em 0;
+}
+
+p,
+h2 {
+  font-family: "Inter", sans-serif;
+}
+
+h2 {
+  font-size: 23px;
+}
+
+p {
+  font-size: 14px;
+}
+
+.autor {
+  text-align: end;
 }
 
 .box {
@@ -95,10 +110,7 @@
   width: 100%;
 }
 
-p,
-h2 {
-  font-family: "Inter", sans-serif;
-}
+
 
 @media (max-width: 768px) {
   .quote {

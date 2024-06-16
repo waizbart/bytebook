@@ -10,7 +10,7 @@
   display: flex;
   flex-direction: row;
   gap: 3em;
-  margin-left: 2em;
+  margin-left: 1.3em;
   background-color: white;
   border: 0.5px solid #cfcfcf;
   border-radius: 20px;
@@ -29,7 +29,11 @@
 .header_date-filho {
   display: flex;
   flex-direction: row;
-  gap: 0.5em;
+  gap: 0.3em;
+}
+
+.header_date {
+  padding: 0.7em 4em;
 }
 
 .header_date-image {

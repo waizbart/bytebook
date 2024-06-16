@@ -1,12 +1,10 @@
-<html>
-  <body class="body">
-    <div class="card" (click)="navigateToDetails()">
-      <img class="card-image" [src]="card.imageLinks.thumbnail" alt="book" />
+<body class="body">
+  <div class="card" (click)="navigateToDetails()">
+    <img class="card-image" [src]="card.imageLinks.thumbnail" alt="book" />
 
-      <div class="card-content">
-        <h3 class="card-title">{{ card.title }}</h3>
-        <p class="card-author">{{ card.authors[0] }}</p>
-      </div>
+    <div class="card-content">
+      <h3 class="card-title">{{ card.title }}</h3>
+      <p class="card-author">{{ card.authors[0] }}</p>
     </div>
-  </body>
-</html>
+  </div>
+</body>

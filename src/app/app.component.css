@@ -1,0 +1,8 @@
+.sidebar {
+    background-image: url('../assets/images/home/background.png');
+    background-size: cover;
+    background-color: white;
+    padding: 1em 2em;
+    height: 100vh;
+    overflow: hidden;
+}
