@@ -79,6 +79,25 @@ export class BookService {
     return this.http.delete(`${this.baseUrl}/${id}`, { headers });
   }
 
+  saveBook(book: any): Observable<any> {
+    const token = localStorage.getItem('token');
+    const userId = localStorage.getItem('userId');
+
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${token}`,
+    });
+
+    return this.http.post(
+      this.baseUrl,
+      {
+        google_books_id: book.id,
+        userId: userId,
+        tag: 'Minha lista'
+      },
+      { headers }
+    );
+  }
+
   setSelectedBookinfo(bookInfo: Card) {
     this.bookInfo = bookInfo;
   }

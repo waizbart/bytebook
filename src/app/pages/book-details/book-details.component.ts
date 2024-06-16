@@ -10,6 +10,7 @@ import { QuoteComponent } from '../../components/quote/quote.component';
 import { BookService } from '../../services/book/book.service';
 import { Card } from '../../components/card/card';
 import { tap } from 'rxjs';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-book-details',
@@ -45,7 +46,7 @@ export class BookDetailsComponent {
 
   avaliability: boolean[] = [];
 
-  constructor(private bookService: BookService) {}
+  constructor(private bookService: BookService, private toastr: ToastrService) {}
 
   ngOnInit(): void {
     let info = this.bookService.getSelectedBookInfo();
@@ -79,5 +80,14 @@ export class BookDetailsComponent {
       let arredondado = Math.round(rand);
       this.avaliability.push(arredondado === 1);
     }
+  }
+
+  saveBook(book: any) {
+    this.bookService.saveBook(book).subscribe(() => {
+      this.toastr.success('Livro salvo com sucesso!');
+    }, error => {
+      console.error('Erro ao salvar livro:', error);
+      this.toastr.error(error.error.message, 'Erro ao salvar livro');
+    });
   }
 }

@@ -48,6 +48,7 @@ export class HomeComponent implements OnInit {
         .map((item: any) => {
           console.log({ item });
           return {
+            id: item.id,
             title: cutString(item.volumeInfo.title, 15),
             authors: item.volumeInfo.authors,
             pageCount: item.volumeInfo.pageCount,

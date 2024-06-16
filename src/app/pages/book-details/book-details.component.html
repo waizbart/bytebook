@@ -23,13 +23,13 @@
           <h2 style="font-size: 36px;">
             {{ book.title }}
           </h2>
-        
+
           <h3 style="font-size: 24px;">
             Por: {{ book.authors[0] }}
-          </h3> 
-    
+          </h3>
+
           <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    
+
           <div class="infoAvaliacao">
             <div class="estrelas">
               <input type="radio" id="cm_star-empty" name="fb" value="" checked/>
@@ -48,7 +48,7 @@
             <p>{{lendoAtualmente}} Lendo atualmente </p>
             <p>{{lidoPor}} Já leram </p>
           </div>
-    
+
           <div class="disponibilidadeContainer">
             <div>
               <p>Disponibilidade</p>
@@ -65,9 +65,9 @@
                 <p>Audio-book</p>
               </div>
             </div>
-        
+
             <div class="disponibilidadeAcoes">
-              <a style="background-color: #2623D5; border-color: #2623D5;" target="_blank">Emprestar</a>
+              <a style="background-color: #2623D5; border-color: #2623D5;" target="_blank" (click)="saveBook(book)">Salvar</a>
               <a [href]="book.previewLink" target="_blank">Previa</a>
             </div>
           </div>
@@ -75,12 +75,11 @@
       </div>
       <div class="author">
         <div class="card">
-
         </div>
       </div>
     </div>
     <div>
-      
+
       <section class="overview">
         <div class="overviewHeader">
           <p>Overview</p>
@@ -113,10 +112,10 @@
         </div>
       </section>
 
-    
+
     </div>
     <section class="description">
       {{book.description}}
     </section>
-  
+
 </div>
