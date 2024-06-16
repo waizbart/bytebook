@@ -37,4 +37,8 @@ export class MyShelfComponent {
       }
     );
   }
+
+  openNewPage(link: string) {
+    window.open(link, '_blank');
+  }
 }
