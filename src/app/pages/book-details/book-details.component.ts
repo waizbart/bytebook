@@ -22,6 +22,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class BookDetailsComponent {
   book: Card = {
+    id: '',
     title: '',
     authors: [],
     pageCount: 0,
@@ -46,7 +47,10 @@ export class BookDetailsComponent {
 
   avaliability: boolean[] = [];
 
-  constructor(private bookService: BookService, private toastr: ToastrService) {}
+  constructor(
+    private bookService: BookService,
+    private toastr: ToastrService
+  ) {}
 
   ngOnInit(): void {
     let info = this.bookService.getSelectedBookInfo();
@@ -83,11 +87,14 @@ export class BookDetailsComponent {
   }
 
   saveBook(book: any) {
-    this.bookService.saveBook(book).subscribe(() => {
-      this.toastr.success('Livro salvo com sucesso!');
-    }, error => {
-      console.error('Erro ao salvar livro:', error);
-      this.toastr.error(error.error.message, 'Erro ao salvar livro');
-    });
+    this.bookService.saveBook(book).subscribe(
+      () => {
+        this.toastr.success('Livro salvo com sucesso!');
+      },
+      (error) => {
+        console.error('Erro ao salvar livro:', error);
+        this.toastr.error(error.error.message, 'Erro ao salvar livro');
+      }
+    );
   }
 }

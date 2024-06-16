@@ -4,7 +4,7 @@
 <div>
   <div class="main-container">
     <div class="header">
-      <input type="text" class="input__pesquisa" placeholder="Nome do livro" [(ngModel)]="search">
+      <input type="text" class="input__pesquisa" placeholder="Nome do livro" [(ngModel)]="search" (keyup.enter)="onSearch()">
       <button (click)="onSearch()" class="botao__pesquisa">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
           viewBox="0 0 16 16">
@@ -17,7 +17,7 @@
     </div>
     <div class="quote__and__newsRack">
       <app-quote class="quete__home"></app-quote>
-      <app-new-arrivals [cards]="highlightedBooks" [isLoading]="isLoading"></app-new-arrivals>
+      <app-new-arrivals [cards]="highlightedBooks" [isLoading]="false"></app-new-arrivals>
     </div>
 
 

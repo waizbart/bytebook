@@ -20,7 +20,7 @@ import { NewArrivalsComponent } from '../../components/new-arrivals/new-arrivals
     SliderComponent,
     QuoteComponent,
     HeaderComponent,
-    NewArrivalsComponent
+    NewArrivalsComponent,
   ],
   providers: [HttpClientModule],
   templateUrl: './home.component.html',
@@ -50,6 +50,7 @@ export class HomeComponent implements OnInit {
       this.highlightedBooks = data.items
         .map((item: any) => {
           return {
+            id: item.id,
             title: cutString(item.volumeInfo.title, 15),
             authors: item.volumeInfo.authors,
             pageCount: item.volumeInfo.pageCount,
@@ -77,6 +78,7 @@ export class HomeComponent implements OnInit {
       this.books = data.items
         .map((item: any) => {
           return {
+            id: item.id,
             title: cutString(item.volumeInfo.title, 15),
             authors: item.volumeInfo.authors,
             pageCount: item.volumeInfo.pageCount,

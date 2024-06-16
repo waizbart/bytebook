@@ -1,4 +1,5 @@
 export interface Card {
+  id: string;
   title: string;
   authors: string[];
   pageCount: number;

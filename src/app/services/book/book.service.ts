@@ -14,6 +14,7 @@ export class BookService {
   constructor(private http: HttpClient) {}
 
   private bookInfo: Card = {
+    id: '',
     title: '',
     authors: [],
     pageCount: 0,
@@ -87,12 +88,14 @@ export class BookService {
       Authorization: `Bearer ${token}`,
     });
 
+    console.log(book);
+
     return this.http.post(
       this.baseUrl,
       {
         google_books_id: book.id,
         userId: userId,
-        tag: 'Minha lista'
+        tag: 'Minha lista',
       },
       { headers }
     );

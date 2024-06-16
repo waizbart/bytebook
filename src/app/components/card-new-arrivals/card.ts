@@ -1,4 +1,7 @@
-export interface CardNewArrivals{
+export interface CardNewArrivals {
+  id: string;
+  title: string;
+  authors: string[];
   pageCount: number;
   publisher: string;
   publishedDate: string;
@@ -6,6 +9,9 @@ export interface CardNewArrivals{
   imageLinks: {
     smallThumbnail: string;
     thumbnail: string;
-  }
+  };
+  description: string;
+  mainCategory: string;
+  averageRating: number;
+  language: string;
 }
-//

@@ -13,6 +13,7 @@ import { BehaviorSubject, Observable, of } from 'rxjs';
 })
 export class CardComponent implements OnInit {
   @Input() card: Card = {
+    id: '',
     title: '',
     authors: [],
     pageCount: 0,

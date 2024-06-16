@@ -1,15 +1,19 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CardNewArrivals } from './card';
 import { Router } from '@angular/router';
+import { BookService } from '../../services/book/book.service';
 @Component({
   standalone: true,
   selector: 'app-card-new-arrivals',
   templateUrl: './card-new-arrivals.component.html',
   styleUrl: './card-new-arrivals.component.css',
-  imports: []
+  imports: [],
 })
 export class CardNewArrivalsComponent implements OnInit {
   @Input() card: CardNewArrivals = {
+    id: '',
+    title: '',
+    authors: [],
     pageCount: 0,
     publisher: '',
     publishedDate: '',
@@ -18,17 +22,19 @@ export class CardNewArrivalsComponent implements OnInit {
       smallThumbnail: '',
       thumbnail: '',
     },
+    description: '',
+    language: '',
+    mainCategory: '',
+    averageRating: 0,
   };
-//
-  constructor(private router: Router) { }
+
+  constructor(private router: Router, private BookService: BookService) {}
 
   ngOnInit(): void {}
 
   navigateToDetails(): void {
-    this.router.navigate(['/book-details'], {
-      queryParams: {
-        previewLink: this.card.previewLink,
-      }
-    });
+    this.BookService.setSelectedBookinfo(this.card);
+
+    this.router.navigate(['/book-details']);
   }
 }
