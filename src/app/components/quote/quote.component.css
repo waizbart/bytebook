@@ -14,12 +14,11 @@
 }
 
 .quote {
-  padding: 1em;
+  padding: 1.4em 1em;
   display: flex;
   flex-direction: column;
   gap: 1.2em;
   background: linear-gradient(to bottom right, #c9472aee, #5b24d1);
-  max-width: 65%;
   border: 1px solid black;
   border-radius: 9px;
   flex: 1;

@@ -12,15 +12,15 @@
 
 .header {
   display: flex;
-  margin-bottom: 1.5em;
+  margin-bottom: 0.5em;
   align-items: center;
 }
 
 .quote__and__newsRack {
   display: flex;
+  gap: 13em;
   width: 100%;
 }
-
 
 .input__pesquisa {
   border: 0.5px solid #cfcfcf;

@@ -3,14 +3,12 @@
   display: flex;
   flex-direction: column;
   padding: 10px;
-  height: auto;
   width: 100%;
   border-radius: 10px;
   box-sizing: border-box;
   background-color: white;
   transition: transform 0.2s ease-in-out;
   gap: 0.7em;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for better look */
 }
 
 .card-new-arrivals:hover {
@@ -18,6 +16,7 @@
 }
 
 .card-new-arrivals-image {
-  height: 130px; /* Ajuste a altura conforme necessário */
+  width: 100%;
+  height: 130px;
   border-radius: 8px;
 }

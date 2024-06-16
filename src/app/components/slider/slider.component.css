@@ -5,7 +5,6 @@
 }
 
 .wrapper {
-  
   width: 100%;
 }
 
@@ -23,15 +22,16 @@
   border-radius: 10px;
   width: 9.4em;
   max-width: 9.4em;
-  flex: 0 0 auto; /* Impedir que as cartas redimensionem para além do tamanho fixo */
+  flex: 0 0 auto;
 }
 
 .loading {
   text-align: center;
-  width: 100%; /* Garantir que o spinner centralize */
+  width: 100%;
 }
 
 .recommendedFY {
   font-weight: 300;
-  margin-bottom: 0.5em;
+  font-size: 18px;
+  margin-top: 1em;
 }
