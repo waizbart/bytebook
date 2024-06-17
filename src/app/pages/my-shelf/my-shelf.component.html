@@ -21,8 +21,8 @@
   <div style="height: 90%; overflow-y: auto;">
 
     <div *ngIf="books.length > 0" class="books-container">
-      <div *ngFor="let book of books" class="book" (click)="openNewPage(book.google_book.volumeInfo.previewLink)">
-        <div class="info">
+      <div *ngFor="let book of books" class="book" >
+        <div class="info" (click)="openNewPage(book.google_book.volumeInfo.previewLink)">
           <div class="book-cover">
             <img [src]="book.google_book.volumeInfo.imageLinks.thumbnail" alt="Book cover" />
           </div>

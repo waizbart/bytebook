@@ -130,3 +130,16 @@
   flex-direction: column;
   gap: 0.5em;
 }
+
+.hearth-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+}
+
+.heart-image {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}

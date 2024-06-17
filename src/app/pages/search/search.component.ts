@@ -21,7 +21,6 @@ export class SearchComponent {
   books: any[] = [];
   isLoading: boolean = false;
   search: string = '';
-
   avaliability: boolean[] = [];
 
   constructor(
@@ -56,31 +55,48 @@ export class SearchComponent {
   searchBooks(query: string) {
     this.isLoading = true;
     this.bookService.getBooks(query, 20).subscribe((data: any) => {
-      this.books = data.items.map((item: any) => ({
+      const bookPromises = data.items.map(async (item: any) => ({
         ...item.volumeInfo,
         id: item.id,
-        isFavorite: this.isBookFavorite(item.id),
+        favorite: await this.isBookFavorite(item.id),
         physicalAvailable: this.randomBoolean(),
         digitalAvailable: true,
         audioAvailable: this.randomBoolean(),
       }));
-      this.isLoading = false;
-      console.log(this.books);
+      Promise.all(bookPromises).then((books) => {
+        this.books = books;
+        this.isLoading = false;
+      });
     });
   }
 
-  isBookFavorite(bookId: string): boolean {
-    // Implementar lógica para verificar se o livro está nos favoritos
-    return false;
+  async isBookFavorite(id: string) {
+    return await this.bookService.verifyFavorite(id);
   }
 
-  toggleFavorite(book: any) {
-    if (book.isFavorite) {
-      book.isFavorite = false;
-      this.toastr.success('Livro removido dos favoritos!');
+  toggleFavorite(book: any, index: number) {
+    if (this.books[index].favorite) {
+      this.bookService.removeBook(this.books[index].id).subscribe(
+        () => {
+          this.toastr.success('Livro removido com sucesso!');
+        },
+        (error) => {
+          console.error('Erro ao remover livro:', error);
+          this.toastr.error(error.error.message, 'Erro ao remover livro');
+        }
+      );
+      this.books[index].favorite = false;
     } else {
-      book.isFavorite = true;
-      this.toastr.success('Livro adicionado aos favoritos!');
+      this.bookService.saveBook(book).subscribe(
+        () => {
+          this.toastr.success('Livro salvo com sucesso!');
+        },
+        (error) => {
+          console.error('Erro ao salvar livro:', error);
+          this.toastr.error(error.error.message, 'Erro ao salvar livro');
+        }
+      );
+      this.books[index].favorite = true;
     }
   }
 

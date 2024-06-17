@@ -53,6 +53,27 @@ export class BookService {
     });
   }
 
+  async verifyFavorite(id: string): Promise<boolean | null> {
+    const token = localStorage.getItem('token');
+    const userId = localStorage.getItem('userId');
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${token}`,
+    });
+
+    const response = await this.http
+      .get<{ results: boolean }>(`${this.baseUrl}/${id}`, {
+        headers,
+      })
+      .toPromise();
+
+    console.log(response);
+
+    const result = response?.hasOwnProperty('results')
+      ? response['results']
+      : null;
+    return result;
+  }
+
   getMyGoogleBooks(): Observable<any[]> {
     return this.getMyBooks().pipe(
       switchMap((books: any) => {
@@ -77,6 +98,8 @@ export class BookService {
       Authorization: `Bearer ${token}`,
     });
 
+    console.log(id);
+
     return this.http.delete(`${this.baseUrl}/${id}`, { headers });
   }
 
@@ -87,8 +110,6 @@ export class BookService {
     const headers = new HttpHeaders({
       Authorization: `Bearer ${token}`,
     });
-
-    console.log(book);
 
     return this.http.post(
       this.baseUrl,

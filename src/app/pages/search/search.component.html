@@ -30,7 +30,7 @@
             <p>No results found</p>
         </div>
         <div *ngIf="!isLoading && books.length > 0" class="book-list">
-            <div *ngFor="let book of books" class="book-item" (click)="navigateToDetails(book)">
+            <div *ngFor="let book of books; let i = index" class="book-item" >
                 <img [src]="book.imageLinks.thumbnail" alt="{{ book.title }}" class="book-image">
                 <div class="book-info">
                     <h3 class="titulo">{{ book.title }}</h3>
@@ -59,8 +59,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="book-info">
-                    <p>{{ book.isFavorite ? 'Favorited' : 'Not Favorited' }}</p>
+                <div class="hearth-container">
+                    <img [id]="i" class="heart-image" [src]="book.favorite ? '../../../assets/images/red-heart.png' : '../../../assets/images/transparent-heart.png'" alt="none" (click)="toggleFavorite(book, i)"/>
                 </div>
                 <div class="book-info">
                     <a [href]="book.previewLink" target="_blank">Preview</a>
