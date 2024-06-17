@@ -11,15 +11,10 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-search',
   standalone: true,
-  imports: [
-    FormsModule,
-    HttpClientModule,
-    CommonModule,
-    HeaderComponent,
-  ],
+  imports: [FormsModule, HttpClientModule, CommonModule, HeaderComponent],
   providers: [HttpClientModule],
   templateUrl: './search.component.html',
-  styleUrls: ['./search.component.css']
+  styleUrls: ['./search.component.css'],
 })
 export class SearchComponent {
   searchQuery: string = '';
@@ -37,7 +32,7 @@ export class SearchComponent {
   ) {}
 
   ngOnInit() {
-    this.route.queryParams.subscribe(params => {
+    this.route.queryParams.subscribe((params) => {
       this.searchQuery = params['query'];
       if (this.searchQuery) {
         this.searchBooks(this.searchQuery);
@@ -47,7 +42,9 @@ export class SearchComponent {
 
   onSearch() {
     if (this.search.trim()) {
-      this.router.navigate(['/search'], { queryParams: { query: this.search } });
+      this.router.navigate(['/search'], {
+        queryParams: { query: this.search },
+      });
     }
   }
 
@@ -58,16 +55,17 @@ export class SearchComponent {
 
   searchBooks(query: string) {
     this.isLoading = true;
-    this.bookService.getBooks(query).subscribe((data: any) => {
+    this.bookService.getBooks(query, 20).subscribe((data: any) => {
       this.books = data.items.map((item: any) => ({
         ...item.volumeInfo,
         id: item.id,
         isFavorite: this.isBookFavorite(item.id),
         physicalAvailable: this.randomBoolean(),
         digitalAvailable: true,
-        audioAvailable: this.randomBoolean()
+        audioAvailable: this.randomBoolean(),
       }));
       this.isLoading = false;
+      console.log(this.books);
     });
   }
 

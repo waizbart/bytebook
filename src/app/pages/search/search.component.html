@@ -29,7 +29,6 @@
         <div *ngIf="!isLoading && books.length === 0">
             <p>No results found</p>
         </div>
-
         <div *ngIf="!isLoading && books.length > 0" class="book-list">
             <div *ngFor="let book of books" class="book-item" (click)="navigateToDetails(book)">
                 <img [src]="book.imageLinks.thumbnail" alt="{{ book.title }}" class="book-image">
@@ -68,6 +67,5 @@
                 </div>
             </div>
         </div>
-
     </div>
 </div>
