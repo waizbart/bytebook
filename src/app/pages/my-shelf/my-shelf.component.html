@@ -1,20 +1,23 @@
 <div *ngIf="books.length === 0" class="no-books">
   <p>Não há livros disponíveis no momento.</p>
 </div>
+<div style="height: 100%; overflow-y: auto;">
 
-<div *ngIf="books.length > 0" class="books-container">
-  <div *ngFor="let book of books" class="book">
-    <div class="info">
-      <div class="book-cover">
-        <img
-          [src]="book.google_book.volumeInfo.imageLinks.thumbnail"
-          alt="Book cover"
-        />
+  <div *ngIf="books.length > 0" class="books-container" >
+    <div *ngFor="let book of books" class="book"  (click)="openNewPage(book.google_book.volumeInfo.previewLink)">
+      <div class="info">
+        <div class="book-cover">
+          <img
+            [src]="book.google_book.volumeInfo.imageLinks.thumbnail"
+            alt="Book cover"
+          />
+        </div>
+        <h2>{{ book.google_book.volumeInfo.title }}</h2>
+        <p>{{ book.google_book.volumeInfo.authors }}</p>
+        <p>Tag: {{ book.tag }}</p>
+        <button (click)="removeBook(book.id)">Remove</button>
       </div>
-      <h2>{{ book.google_book.volumeInfo.title }}</h2>
-      <p>{{ book.google_book.volumeInfo.authors }}</p>
-      <p>Tag: {{ book.tag }}</p>
-      <button (click)="removeBook(book.id)">Remove</button>
     </div>
   </div>
+    
 </div>
