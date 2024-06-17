@@ -28,28 +28,6 @@
   border-radius: 20px 0 0 20px;
 }
 
-.input__pesquisa::placeholder {
-  font-size: 1em;
-  color: #999;
-}
-
-.input__pesquisa::-webkit-input-placeholder {
-  font-size: 1em;
-  color: #999;
-}
-.input__pesquisa::-moz-placeholder {
-  font-size: 1em;
-  color: #999;
-}
-.input__pesquisa:-ms-input-placeholder {
-  font-size: 1em;
-  color: #999;
-}
-.input__pesquisa:-moz-placeholder {
-  font-size: 1em;
-  color: #999;
-}
-
 .botao__pesquisa {
   padding: 0.5em 1.5em;
   border: 0.5px solid #cfcfcf;

@@ -21,6 +21,8 @@ import { ToastrService } from 'ngx-toastr';
   providers: [HttpClientModule],
 })
 export class BookDetailsComponent {
+  search: string = '';
+
   book: Card = {
     id: '',
     title: '',
@@ -49,7 +51,8 @@ export class BookDetailsComponent {
 
   constructor(
     private bookService: BookService,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -61,6 +64,12 @@ export class BookDetailsComponent {
     this.setValues();
 
     this.generateRandomBooleans(3);
+  }
+
+  onSearch() {
+    if (this.search.trim()) {
+      this.router.navigate(['/search'], { queryParams: { query: this.search } });
+    }
   }
 
   randomNumber(min: number, max: number): number {

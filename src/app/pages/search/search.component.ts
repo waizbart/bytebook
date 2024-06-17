@@ -51,6 +51,11 @@ export class SearchComponent {
     }
   }
 
+  navigateToDetails(book: any): void {
+    this.bookService.setSelectedBookinfo(book);
+    this.router.navigate(['/book-details']);
+  }
+
   searchBooks(query: string) {
     this.isLoading = true;
     this.bookService.getBooks(query).subscribe((data: any) => {
@@ -72,13 +77,10 @@ export class SearchComponent {
   }
 
   toggleFavorite(book: any) {
-    // Implementar lógica para adicionar/remover dos favoritos
     if (book.isFavorite) {
-      // Remover dos favoritos
       book.isFavorite = false;
       this.toastr.success('Livro removido dos favoritos!');
     } else {
-      // Adicionar aos favoritos
       book.isFavorite = true;
       this.toastr.success('Livro adicionado aos favoritos!');
     }
