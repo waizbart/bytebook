@@ -64,6 +64,7 @@ body {
 
 .card:hover {
   transform: scale(1.02); /* Add a hover effect */
+  transition: transform 0.5s ease;
 }
 
 .card-content {
