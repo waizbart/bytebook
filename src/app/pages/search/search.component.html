@@ -1,0 +1,71 @@
+<div>
+    <div class="main-container">
+        <div class="header">
+            <input type="text" class="input__pesquisa" placeholder="Nome do livro" [(ngModel)]="search"
+                (keyup.enter)="onSearch()">
+            <button (click)="onSearch()" class="botao__pesquisa">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                </svg>
+            </button>
+    
+            <app-header />
+        </div>
+    </div>
+</div>
+
+
+<div class="search-container">
+    <h2>Search Results for "{{ searchQuery }}"</h2>
+
+    <div *ngIf="isLoading" class="loading">
+        <div class="spinner-border" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+
+    <div *ngIf="!isLoading && books.length === 0">
+        <p>No results found</p>
+    </div>
+
+    <div *ngIf="!isLoading && books.length > 0" class="book-list">
+        <div *ngFor="let book of books" class="book-item">
+            <img [src]="book.imageLinks.thumbnail" alt="{{ book.title }}" class="book-image">
+            <div class="book-info">
+                <h3>{{ book.title }}</h3>
+                <p>{{ book.authors.join(', ') }}</p>
+            </div>
+            <div class="book-info">
+                <p>{{ book.language }}</p>
+            </div>
+            <div class="book-info">
+                <div class="disponibilidadeContainer">
+                    <div class="icons_dispo">
+                        <div class="itemDisponibilidade">
+                            <img
+                                [src]="avaliability[0] ? '../../assets/images/book-details/check.png' : '../../assets/images/book-details/delete.png'" />
+                            <p>Físico</p>
+                        </div>
+                        <div class="itemDisponibilidade">
+                            <img src='../../assets/images/book-details/check.png' />
+                            <p>Digital</p>
+                        </div>
+                        <div class="itemDisponibilidade">
+                            <img
+                                [src]="avaliability[2] ? '../../assets/images/book-details/check.png' : '../../assets/images/book-details/delete.png'" />
+                            <p>Audio-book</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="book-info">
+                <p>{{ book.isFavorite ? 'Favorited' : 'Not Favorited' }}</p>
+            </div>
+            <div class="book-info">
+                <a [href]="book.previewLink" target="_blank">Preview</a>
+            </div>
+        </div>
+    </div>
+</div>

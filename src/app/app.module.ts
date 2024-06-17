@@ -14,6 +14,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { MyShelfComponent } from './pages/my-shelf/my-shelf.component';
 import { NewArrivalsComponent } from './components/new-arrivals/new-arrivals.component';
+import { SearchComponent } from './pages/search/search.component';
 
 @NgModule({
   declarations: [

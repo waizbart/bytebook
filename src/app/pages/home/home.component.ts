@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BookService } from '../../services/book/book.service';
 import { Book } from '../../services/book/book.interface';
+import { Router } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { SliderComponent } from '../../components/slider/slider.component';
@@ -33,7 +34,7 @@ export class HomeComponent implements OnInit {
   highlightedBooks: Book[] = [];
   isLoading: boolean = false;
 
-  constructor(private bookService: BookService) {}
+  constructor(private bookService: BookService, private router: Router) {}
 
   ngOnInit() {
     this.getBooks();
@@ -41,7 +42,9 @@ export class HomeComponent implements OnInit {
   }
 
   onSearch() {
-    this.searchBooks(this.search);
+    if (this.search.trim()) {
+      this.router.navigate(['/search'], { queryParams: { query: this.search } });
+    }
   }
 
   loadHighlightedBooks() {
