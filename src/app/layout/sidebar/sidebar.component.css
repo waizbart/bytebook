@@ -29,8 +29,8 @@
     justify-content: center;
     align-items: center;
     img {
-      height: 200%;
-      width: 200%;
+      height: 80%;
+      width: 80%;
       padding-right: 10%;
     }
   }
@@ -47,6 +47,16 @@
       height: calc(100% / 3);
       outline: none;
       width: 50%;
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: inherit;
+      margin: 10px 0;
+    }
+    img {
+      width: 24px;
+      height: 24px;
+      margin-right: 9px;
     }
   }
 
@@ -67,6 +77,7 @@
       a {
         height: calc(100% / 3);
         width: 60%;
+        text-decoration: none;
         font-size: 14px;
       }
     }

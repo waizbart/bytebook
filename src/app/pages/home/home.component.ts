@@ -49,7 +49,7 @@ export class HomeComponent implements OnInit {
 
   loadHighlightedBooks() {
     this.isLoading = true;
-    this.bookService.getBooks('C++', 8).subscribe((data: any) => {
+    this.bookService.getBooks('Python Programming ', 8).subscribe((data: any) => {
       this.highlightedBooks = data.items
         .map((item: any) => {
           return {
