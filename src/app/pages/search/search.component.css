@@ -30,6 +30,47 @@
   border-radius: 0 20px 20px 0;
 }
 
+h2{
+  margin-bottom: 0.5em;
+}
+
+.colunas__sobre {
+  display: flex;
+  margin-bottom: 0.5em;
+}
+
+.title {
+  margin-left: 0.5em;
+}
+
+.lingua {
+  margin-left: 27em;
+}
+
+.dispo {
+  margin-left: 3em;
+}
+
+.status {
+  margin-left: 6.6em;
+}
+
+.preview {
+  font-size: 14px;
+  text-decoration: none;
+  border: 1px solid #2623D5;
+  border-radius: 6px;
+  margin: 0 1.5em;
+  padding: 0.3em 0;
+  color: #2623D5;
+}
+
+.preview:hover {
+  transform: scale(1.03);
+  transition: transform 0.5s ease;
+  background-color: #2623D5;
+  color: white;
+}
 
 .search-container {
   padding: 20px;

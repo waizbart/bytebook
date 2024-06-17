@@ -53,20 +53,32 @@
       text-decoration: none;
       color: inherit;
       margin: 10px 0;
+      color: #4D4D4D;
+    }
+    a:hover {
+      transform: scale(1.03);
+      transition: transform 0.5s ease;
     }
     img {
       width: 24px;
       height: 24px;
       margin-right: 9px;
     }
+    .casinha, .lupa {
+      opacity: 50%;
+    }
+    .lupa-pai {
+      margin-top: 1em;
+    }
   }
 
   #info {
-    height: 55%;
+    height: 50%;
     min-width: 50%;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    margin-left: 1em;
 
     .info {
       height: 100px;
@@ -80,9 +92,18 @@
         width: 60%;
         text-decoration: none;
         font-size: 14px;
+        color: #4D4D4D;
+      }
+      a:hover {
+        transform: scale(1.03);
+        transition: transform 0.5s ease;
       }
     }
   }
+}
+
+a {
+  
 }
 
 .teste {

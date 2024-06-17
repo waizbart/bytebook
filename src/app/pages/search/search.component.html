@@ -19,7 +19,14 @@
 
 
     <div class="search-container">
-        <h2>Search Results for "{{ searchQuery }}"</h2>
+        <h2>Resultados para: "{{ searchQuery }}"</h2>
+
+        <div class="colunas__sobre">
+            <p class="title">Título</p>
+            <p class="lingua">Linguagem</p>
+            <p class="dispo">Disponibilidade</p>
+            <p class="status">Status</p>
+        </div>
 
         <div *ngIf="isLoading" class="loading">
             <div class="spinner-border" role="status">
@@ -63,7 +70,7 @@
                     <p>{{ book.isFavorite ? 'Favorited' : 'Not Favorited' }}</p>
                 </div>
                 <div class="book-info">
-                    <a [href]="book.previewLink" target="_blank">Preview</a>
+                    <a class="preview" [href]="book.previewLink" target="_blank">Preview</a>
                 </div>
             </div>
         </div>
